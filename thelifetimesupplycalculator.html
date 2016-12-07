@@ -15,11 +15,12 @@
     <h1>The Lifetime Supply Calculator</h1>
     <div id="output"></div>
     <script>
-      // YOUR CODE GOES HERE
-
-      // Call the addOutput function with your output value
-      // when you are ready.
-      // Example: addOutput(outputValue);
+      var age = prompt("How old are you?");
+      var deathAge = prompt("How old will you be when you die?");
+      var favSnack = prompt("What's your favorite snack?")
+      var perDay = prompt("How many do you have per day?");
+      var needed = (perDay * 365) * (deathAge - age);
+      document.getElementById('output').innerHTML = 'You will need ' + needed + " " + favSnack  + ' to last you until you are ' + deathAge;
     </script>
   </body>
 </html>

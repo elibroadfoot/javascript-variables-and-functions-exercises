@@ -15,11 +15,10 @@
     <h1>The Age Calculator</h1>
     <div id="output"></div>
     <script>
-      // YOUR CODE GOES HERE
-
-      // Call the addOutput function with your output value
-      // when you are ready.
-      // Example: addOutput(outputValue);
+      var birthYear = prompt ("Enter your birth year.");
+      var futureYear  = prompt ("Enter year that you want to calculate how old you will be/how old you were.");
+      var age  = futureYear - birthYear;
+      document.getElementById('output').innerHTML = 'I will be/was either ' + (age - 1) + ' or ' + (age);
     </script>
   </body>
 </html>
