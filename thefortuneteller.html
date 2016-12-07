@@ -15,11 +15,12 @@
     <h1>The Fortune Teller</h1>
     <div id="output"></div>
     <script>
-      // YOUR CODE GOES HERE
+      var childs  = prompt("Enter a number");
+      var lover  = prompt("Enter a celebrity's name");
+      var place = prompt("Enter a place");
+      var occupation = prompt("Enter your dream job");
 
-      // Call the addOutput function with your output value
-      // when you are ready.
-      // Example: addOutput(outputValue);
+      document.getElementById('output').innerHTML = 'You will be a ' + occupation + ' in ' + place + ', and married to ' + lover + ' ' + ' with ' + childs + ' kids.';
     </script>
   </body>
 </html>
