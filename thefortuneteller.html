@@ -13,14 +13,25 @@
       <li><a href="thetemperatureconverter.html">The Temperature Converter</a></li>
     </ul>
     <h1>The Fortune Teller</h1>
-    <div id="output"></div>
+    <p>Number:
+    <input style="display: inline-block;" type="text" id="userNumber"></p>
+    <p>Person's Name:
+    <input style="display: inline-block;" type="text" id="userPerson"></p>
+    <p>Location:
+    <input style="display: inline-block;" type="text" id="userPlace"></p>
+    <p>Dream Job:
+    <input style="display: inline-block;" type="text" id="userJob"></p>
+    <input type="submit" onclick="tellFortune()">
+    <div style="margin-top: 10px; width: 500px; height: 20px; border: 3px solid #000000;" id="output"></div>
     <script>
-      var childs  = prompt("Enter a number");
-      var lover  = prompt("Enter a celebrity's name");
-      var place = prompt("Enter a place");
-      var occupation = prompt("Enter your dream job");
-
+    function tellFortune(childs, lover, place, occupation) {
+      var childs = parseInt(document.getElementById("userNumber").value, 10);
+      var lover = document.getElementById("userPerson").value;
+      var place = document.getElementById("userPlace").value;
+      var occupation = document.getElementById("userJob").value;
       document.getElementById('output').innerHTML = 'You will be a ' + occupation + ' in ' + place + ', and married to ' + lover + ' ' + ' with ' + childs + ' kids.';
+    }
+
     </script>
   </body>
 </html>
