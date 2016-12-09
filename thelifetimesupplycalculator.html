@@ -13,14 +13,25 @@
       <li><a href="thetemperatureconverter.html">The Temperature Converter</a></li>
     </ul>
     <h1>The Lifetime Supply Calculator</h1>
-    <div id="output"></div>
+    <p>Age:
+    <input style="display: inline-block;" type="text" id="userNumber"></p>
+    <p>How old will you be when you die?:
+    <input style="display: inline-block;" type="text" id="userDeath"></p>
+    <p>What is your favorite snack:
+    <input style="display: inline-block;" type="text" id="userSnack"></p>
+    <p>How many of your favorite snack do you eat per day?:
+    <input style="display: inline-block;" type="text" id="userPerDay"></p>
+    <input type="submit" onclick="calculateSupply()">
+    <div style="margin-top: 10px; width: 500px; height: 20px; border: 3px solid #000000;" id="output"></div>
     <script>
-      var age = prompt("How old are you?");
-      var deathAge = prompt("How old will you be when you die?");
-      var favSnack = prompt("What's your favorite snack?")
-      var perDay = prompt("How many do you have per day?");
-      var needed = (perDay * 365) * (deathAge - age);
-      document.getElementById('output').innerHTML = 'You will need ' + needed + " " + favSnack  + ' to last you until you are ' + deathAge;
+      function calculateSupply(age, deathAge, favSnack, perDay, needed) {
+        var age = parseInt(document.getElementById("userNumber").value, 10);
+        var deathAge = parseInt(document.getElementById("userDeath").value, 10);
+        var favSnack = document.getElementById("userSnack").value;
+        var perDay = parseInt(document.getElementById("userPerDay").value, 10);
+        var needed = (perDay * 365) * (deathAge - age);
+        document.getElementById('output').innerHTML = 'You will need ' + needed + " " + favSnack  + ' to last you until you are ' + deathAge;
+      }
     </script>
   </body>
 </html>
