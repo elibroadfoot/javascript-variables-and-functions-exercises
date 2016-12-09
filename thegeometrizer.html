@@ -1,28 +1,33 @@
 <!doctype html>
 <html>
-  <head>
-    <script src="js/javascript-variable-exercises.js"></script>
-  </head>
-  <body>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="thefortuneteller.html">The Fortune Teller</a></li>
-      <li><a href="theagecalculator.html">The Age Calculator</a></li>
-      <li><a href="thelifetimesupplycalculator.html">The Lifetime Supply Calculator</a></li>
-      <li><a href="thegeometrizer.html">The Geometrizer</a></li>
-      <li><a href="thetemperatureconverter.html">The Temperature Converter</a></li>
-    </ul>
-    <h1>The Geometrizer</h1>
-    <h4>Enter the radius of a circle!</h4>
-    <input type="text" onkeyup="getCircAndArea()" id="userRadius">
-    <div id="output"></div>
-    <script>
-      function getCircAndArea() {
-        var radius = parseInt(document.getElementById("userRadius").value, 10);
-        var circumference = Math.PI * 2*radius;
-        var area = Math.PI * radius*radius;
-        document.getElementById('output').innerHTML = "The circumference is " + circumference + " and the area is " + area;
-      }
-    </script>
-  </body>
+<head>
+  <script src="js/javascript-variable-exercises.js"></script>
+</head>
+<body>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="thefortuneteller.html">The Fortune Teller</a></li>
+    <li><a href="theagecalculator.html">The Age Calculator</a></li>
+    <li><a href="thelifetimesupplycalculator.html">The Lifetime Supply Calculator</a></li>
+    <li><a href="thegeometrizer.html">The Geometrizer</a></li>
+    <li><a href="thetemperatureconverter.html">The Temperature Converter</a></li>
+  </ul>
+  <h1>The Geometrizer</h1>
+  <h4>Enter the radius of a circle!</h4>
+  <input type="text" onkeyup="calcCircumference(), calcArea()" id="userRadius">
+  <div style="margin-top: 10px;" id="output"></div>
+  <div style="margin-top: 10px;" id="output2"></div>
+  <script>
+    function calcCircumference() {
+      var radius = parseInt(document.getElementById("userRadius").value, 10);
+      var circumference = Math.PI * 2*radius;
+      document.getElementById('output').innerHTML = "The circumference is " + +circumference.toFixed(2);
+    }
+    function calcArea() {
+      var radius = parseInt(document.getElementById("userRadius").value, 10);
+      var area = Math.PI * radius*radius;
+      document.getElementById('output2').innerHTML = "The area is " + +area.toFixed(2);
+    }
+  </script>
+</body>
 </html>
