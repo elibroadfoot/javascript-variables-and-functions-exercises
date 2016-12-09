@@ -13,24 +13,24 @@
       <li><a href="thetemperatureconverter.html">The Temperature Converter</a></li>
     </ul>
     <h1>The Temperature Converter</h1>
-    <h4>Enter a temperature in fahrenheit and press submit.</h4>
-    <input type="text" id="userFahrenheit" onkeyup="fToC()">
+    <h4>Enter a temperature in fahrenheit.</h4>
+    <input type="text" id="userFahrenheit" onkeyup="fahrenheitToCelcius()">
     <div id="output1"></div>
-    <h4>Enter a temperature in celcius and press submit.</h4>
-    <input type="text" id="userCelcius" onkeyup="cToF()">
+    <h4>Enter a temperature in celcius.</h4>
+    <input type="text" id="userCelcius" onkeyup="celciusToFahrenheit()">
     <div id="output2"></div>
     <script>
-      function fToC() {
+      function fahrenheitToCelcius() {
         var fahrenheit = parseInt(document.getElementById("userFahrenheit").value, 10);
         var celcius = parseInt(document.getElementById("userCelcius").value, 10);
         var toCelcius = (fahrenheit - 32) * (5/9);
-        document.getElementById('output1').innerHTML = fahrenheit + " degrees fahrenheit is " + toCelcius + " degrees celcius.";
+        document.getElementById('output1').innerHTML = +fahrenheit.toFixed(2) + "°F is " + +toCelcius.toFixed(2) + "°C.";
       }
-      function cToF() {
+      function celciusToFahrenheit() {
         var fahrenheit = parseInt(document.getElementById("userFahrenheit").value, 10);
         var celcius = parseInt(document.getElementById("userCelcius").value, 10);
         var toFahrenheit = (celcius * (9/5)) + 32;
-        document.getElementById('output2').innerHTML = celcius + " degrees celcius is " + toFahrenheit + " degrees fahrenheit.";
+        document.getElementById('output2').innerHTML = +celcius.toFixed(2) + "°C is " + +toFahrenheit.toFixed(2) + "°F.";
       }
       // TIPS:
       // - The formula to convert Celsius to Fahrenheit is:
