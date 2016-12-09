@@ -13,12 +13,29 @@
       <li><a href="thetemperatureconverter.html">The Temperature Converter</a></li>
     </ul>
     <h1>The Age Calculator</h1>
-    <div id="output"></div>
+    <p>Enter birth year:<input style="display: inline-block;" type="text" id="userBirth"></p>
+    <p>Enter another year:<input style="display: inline-block;" type="text" id="userFuture"></p>
+    <input type="submit" onclick="handleClick()">
+    <div style="margin-top: 10px;" id="output"></div>
     <script>
-      var birthYear = prompt ("Enter your birth year.");
-      var futureYear  = prompt ("Enter year that you want to calculate how old you will be/how old you were.");
-      var age  = futureYear - birthYear;
-      document.getElementById('output').innerHTML = 'I will be/was either ' + (age - 1) + ' or ' + (age);
+      function calculateAge(birthYear, futureYear) {
+        var age  = futureYear - birthYear;
+        var currentYear = new Date().getFullYear();
+ 
+        if (futureYear < currentYear){
+          document.getElementById('output').innerHTML = 'I was either ' + (age - 1) + ' or ' + (age);
+        } else {
+          document.getElementById('output').innerHTML = 'I will be either ' + (age - 1) + ' or ' + (age);
+        }
+      }
+ 
+      function handleClick() {
+ 
+        var birthYear = parseInt(document.getElementById("userBirth").value, 10);
+        var futureYear = parseInt(document.getElementById("userFuture").value, 10);
+ 
+        calculateAge(birthYear, futureYear);
+      }
     </script>
   </body>
 </html>
